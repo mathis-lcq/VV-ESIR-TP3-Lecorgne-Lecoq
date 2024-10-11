@@ -26,3 +26,36 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1.
+Empty string Balanced: "".
+    aucun symbole repéré
+Single Pair of Balanced Symbols: "()", "[]", "{}".
+    une seule paire de symbole
+Single Pair of Unbalanced Symbols: "(", ")", "[}", "{]".
+    une fausse paire de symbole
+Multiple Balanced Symbols: "([])", "{()[]}", "{[()]}".
+    plusieurs paires de symbole bien imbriqué
+Multiple Unbalanced Symbols: "([)]", "([)", "([{}])]", "}{".
+    plusieurs symboles mal imbriqués
+Symbols with Mixed Content: "abc{[()]def}".
+    plusieurs symboles bien imbriqué avec d'autre caractères
+Symbols with Mixed Content Unbalanced: "a{}b]c".
+    plusieurs symboles mal imbriqué avec d'autre caractères
+
+2.
+Test coverage 100%
+Ajout de test pour parcourir tout le code, chaque conditions est ainsi testée.
+
+4.
+Generated 19 mutations Killed 19 (100%).
+
+Pit Test Coverage Report:
+
+
+Number of Classes	Line Coverage	Mutation Coverage
+1	92% 12/13	100% 19/19
+Breakdown by Class
+Name	Line Coverage	Mutation Coverage
+StringUtils.java	92% 12/13	100% 19/19
+
+Le test de mutation est passé.
