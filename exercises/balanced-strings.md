@@ -51,6 +51,7 @@ Generated 19 mutations Killed 19 (100%).
 
 Pit Test Coverage Report:
 
+
 Number of Classes	Line Coverage	Mutation Coverage
 1	92% 12/13	100% 19/19
 Breakdown by Class
