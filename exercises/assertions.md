@@ -53,11 +53,52 @@ Answer the following questions:
             //....
         }
 
-    2. §§§§§§§§§§§§§§§§§§§§§§ Autre cas d'utilisation à faire §§§§§§§§§§§§§§§§§§§§§§§§§
+    2. Nous pouvons échouer à un test lorsqu’il est incomplet ou pas encore implémenté:
+          @Test
+          public void incompleteTest() {
+             fail("Not yet implemented");
+          }
+
+    3. Nous pouvons également le faire lorsque nous pensons qu'une exception se produira :
+         @Test
+         public void expectedException() {
+             try {
+                 methodThrowsException();
+                 fail("Expected exception was not thrown");
+             } catch (Exception e) {
+                 assertNotNull(e);
+             }
+         }
+
+
+    4. L'échec du test alors qu'une exception ne devrait pas être levée est une autre option :
+         @Test
+         public void unexpectedException() {
+             try {
+                 safeMethod();
+                 // more testing code
+             } catch (Exception e) {
+                 fail("Unexpected exception was thrown");
+             }
+         }
+
+
+    5. Enfin, nous pouvons échouer à un test lorsque le code ne revient pas/s’interrompt comme prévu :
+         @Test
+         public void returnBefore() {
+             int value = randomInteger();
+             for (int i = 0; i < 5; i++) {
+                 // returns when (value + i) is an even number
+                 if ((i + value) % 2 == 0) {
+                     return;
+                 }
+             }
+             fail("Should have returned before");
+         }
 
 
 
-4.   Avantages de assertThrows par rapport à @Test(expected) :
+5.   Avantages de assertThrows par rapport à @Test(expected) :
 
     1. assertThrows est plus explicite en définissant le bloc de code exact où l'exception est attendue. Avec @Test(expected), si une exception est levée avant l'endroit attendu, le test peut toujours réussir, ce qui peut donner des résultats trompeurs.
 
