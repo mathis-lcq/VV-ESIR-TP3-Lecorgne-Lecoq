@@ -53,3 +53,85 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+
+1: Partitionnement de l'espace d'entrée
+
+Le partitionnement de l'espace d'entrée permet d'identifier les caractéristiques et les blocs à tester pour chaque méthode. Voici les caractéristiques et blocs identifiés :
+Méthode isValidDate
+
+            Jour (day)
+                Bloc valide : 1 à 31
+                Bloc invalide : < 1 ou > 31
+            Mois (month)
+                Bloc valide : 1 à 12
+                Bloc invalide : < 1 ou > 12
+            Année (year)
+                Bloc valide : ≥ 0
+                Bloc invalide : < 0
+            Cas spéciaux :
+                Mois de février (année bissextile ou non)
+                Mois avec 30 jours (avril, juin, septembre, novembre)
+                Mois avec 31 jours
+
+Méthode isLeapYear
+
+            Année
+                Bloc divisible par 4 mais non divisible par 100 (année bissextile)
+                Bloc divisible par 400 (année bissextile)
+                Bloc divisible par 100 mais non par 400 (non bissextile)
+                Bloc non divisible par 4 (non bissextile)
+
+Méthode nextDate
+        
+            Cas normaux :
+                Pas de changement de mois ou d'année
+            Changements de mois :
+                Fin de mois (31 jours, 30 jours, 28/29 jours pour février)
+            Changements d'année :
+                31 décembre
+            Cas spéciaux :
+                Année bissextile
+
+Méthode previousDate
+
+            Cas normaux :
+                Pas de changement de mois ou d'année
+            Changements de mois :
+                Début du mois (1er jour)
+            Changements d'année :
+                1er janvier
+            Cas spéciaux :
+                Année bissextile
+
+Méthode compareTo
+
+            Cas normaux :
+                Même date
+                Date antérieure
+                Date postérieure
+            Cas spéciaux :
+                Comparaison avec null (doit lancer une exception)
+
+
+2: Évaluation de la couverture des instructions
+
+L'évaluation de la couverture des instructions vise à s'assurer que tous les chemins du code sont couverts. Les tests suivants ont été ajoutés pour augmenter la couverture :
+
+            Tests supplémentaires pour les années bissextiles et non bissextiles dans isValidDate.
+            Tests pour les dates limites (début et fin de mois, fin d'année) dans nextDate et previousDate.
+            Tests pour les exceptions (compareTo avec null).
+
+3: Couverture des choix de base
+
+Pour les prédicats complexes utilisant plusieurs opérateurs logiques, les tests ont été ajustés pour couvrir toutes les combinaisons possibles. Par exemple, la méthode isValidDate inclut plusieurs vérifications logiques pour la validité du jour et du mois. Les cas suivants ont été ajoutés pour garantir la couverture des choix de base :
+
+            isValidDate avec différentes combinaisons de mois (février bissextile/non bissextile) et de jours limites.
+            Tests de logique pour les années dans isLeapYear.
+
+4: Évaluation avec PIT
+
+L'utilisation de PIT permet d'évaluer le score de mutation de la suite de tests. Voici les résultats et les actions entreprises :
+
+            Score de mutation : Après l'exécution des tests, le score de mutation était satisfaisant (> 90 %), mais quelques mutants vivants persistaient.
+            Mutants vivants : Les mutants concernaient des vérifications de limites et de dates invalides.
+            Actions entreprises : Des tests supplémentaires ont été ajoutés pour les cas extrêmes et les dates limite, comme les dates proches de l'année 0 ou les mois de février avec différents jours.
