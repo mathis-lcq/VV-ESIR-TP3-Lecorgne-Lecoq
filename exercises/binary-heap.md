@@ -98,13 +98,4 @@ Si nous avons des prédicats impliquant plusieurs opérateurs booléens (comme &
 
 4: Évaluation de la suite de tests avec PIT (mutation testing)
 
-L'étape finale consiste à utiliser PIT (un outil de mutation testing) pour évaluer la robustesse de la suite de tests. Voici les étapes à suivre :
-
-Exécuter PIT : 
-Cela génère des mutants (versions modifiées du code avec de petits changements).
-Obtenir le score de mutation : Le score est le pourcentage de mutants "tués" par la suite de tests. Plus le score est élevé, plus la suite de tests est efficace.
-Analyser les mutants vivants : Les mutants qui survivent indiquent des parties du code qui ne sont pas correctement testées.
-Ajouter ou modifier les tests pour tuer les mutants restants. 
-Par exemple :
-Ajouter des tests pour des cas limites ou des scénarios inhabituels.
-Vérifier des comportements inhabituels comme la suppression d'un élément immédiatement après son ajout.
+L'étape finale consiste à utiliser PIT (un outil de mutation testing) pour évaluer la robustesse de la suite de tests. 
