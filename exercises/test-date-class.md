@@ -132,6 +132,6 @@ Pour les prédicats complexes utilisant plusieurs opérateurs logiques, les test
 
 L'utilisation de PIT permet d'évaluer le score de mutation de la suite de tests. Voici les résultats et les actions entreprises :
 
-            Score de mutation : Après l'exécution des tests, le score de mutation était satisfaisant (> 90 %), mais quelques mutants vivants persistaient.
-            Mutants vivants : Les mutants concernaient des vérifications de limites et de dates invalides.
-            Actions entreprises : Des tests supplémentaires ont été ajoutés pour les cas extrêmes et les dates limite, comme les dates proches de l'année 0 ou les mois de février avec différents jours.
+            Score de mutation :
+            Mutants vivants :
+            Actions entreprises : 
