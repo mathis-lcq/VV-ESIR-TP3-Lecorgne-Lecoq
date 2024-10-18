@@ -99,3 +99,14 @@ Si nous avons des prédicats impliquant plusieurs opérateurs booléens (comme &
 4: Évaluation de la suite de tests avec PIT (mutation testing)
 
 L'étape finale consiste à utiliser PIT (un outil de mutation testing) pour évaluer la robustesse de la suite de tests. 
+
+Result:
+Number of Classes	Line Coverage	Mutation Coverage
+1	100% 39/39	88% 29/33
+
+Name	Line Coverage	Mutation Coverage
+BinaryHeap.java	100% 39/39	88% 29/33
+
+
+Les mutants non tués correspondent à des modification de types : "changed conditional boundary".
+Donc nous considérons que les 88% sont suffisant, étant donnés que ce type de modification est parfois associés à un changement de ">" à ">=".
