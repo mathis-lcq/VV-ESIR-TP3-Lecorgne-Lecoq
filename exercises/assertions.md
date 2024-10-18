@@ -44,7 +44,7 @@ Answer the following questions:
         la logique de test n'est pas valide, alors fail() permet d'entraîner immédiatement l'échec du test avec la possibilité d'afficher un message pour infiquer l'erreur.
 
         Exemple: 
-
+         ```
         @Test
         public void testObject() {
             if(obj == null) {
@@ -52,14 +52,16 @@ Answer the following questions:
             }
             //....
         }
-
+         ```
     2. Nous pouvons échouer à un test lorsqu’il est incomplet ou pas encore implémenté:
+         ```
           @Test
           public void incompleteTest() {
              fail("Not yet implemented");
           }
-
-    3. Nous pouvons également le faire lorsque nous pensons qu'une exception se produira :
+         ```
+    4. Nous pouvons également le faire lorsque nous pensons qu'une exception se produira :
+         ```
          @Test
          public void expectedException() {
              try {
@@ -69,9 +71,10 @@ Answer the following questions:
                  assertNotNull(e);
              }
          }
+         ```
 
-
-    4. L'échec du test alors qu'une exception ne devrait pas être levée est une autre option :
+    6. L'échec du test alors qu'une exception ne devrait pas être levée est une autre option :
+         ```
          @Test
          public void unexpectedException() {
              try {
@@ -81,9 +84,10 @@ Answer the following questions:
                  fail("Unexpected exception was thrown");
              }
          }
+         ```
 
-
-    5. Enfin, nous pouvons échouer à un test lorsque le code ne revient pas/s’interrompt comme prévu :
+    8. Enfin, nous pouvons échouer à un test lorsque le code ne revient pas/s’interrompt comme prévu :
+         ```
          @Test
          public void returnBefore() {
              int value = randomInteger();
@@ -95,18 +99,18 @@ Answer the following questions:
              }
              fail("Should have returned before");
          }
-
+         ```
 
 
 5.   Avantages de assertThrows par rapport à @Test(expected) :
 
-    1. assertThrows est plus explicite en définissant le bloc de code exact où l'exception est attendue. Avec @Test(expected), si une exception est levée avant l'endroit attendu, le test peut toujours réussir, ce qui peut donner des résultats trompeurs.
+ 1. assertThrows est plus explicite en définissant le bloc de code exact où l'exception est attendue. Avec @Test(expected), si une exception est levée avant l'endroit attendu, le test peut toujours réussir, ce qui peut donner des résultats trompeurs.
 
-    2. assertThrows permet de se concentrer sur des parties spécifiques du code où une exception est attendue, offrant un meilleur contrôle.
+ 2. assertThrows permet de se concentrer sur des parties spécifiques du code où une exception est attendue, offrant un meilleur contrôle.
 
-    3. assertThrows renvoie l'exception levée, ce qui permet de vérifier des éléments supplémentaires, comme le message d'erreur de l'exception.
+ 3. assertThrows renvoie l'exception levée, ce qui permet de vérifier des éléments supplémentaires, comme le message d'erreur de l'exception.
 
-    Exemple avec assertThrows :
+ Exemple avec assertThrows :
 
         @Test
             public void testDivisionParZero() {
@@ -116,7 +120,7 @@ Answer the following questions:
                         calculatrice.diviser(10, 0));
             }
 
-    assertThrows est utilisée pour vérifier qu'une IllegalArgumentException est levée lorsque la méthode diviser(10, 0) est appelée.
-    Ce type de test est très utile pour vérifier que les cas d'erreurs sont correctement gérés dans une application.
+ assertThrows est utilisée pour vérifier qu'une IllegalArgumentException est levée lorsque la méthode diviser(10, 0) est appelée.
+ Ce type de test est très utile pour vérifier que les cas d'erreurs sont correctement gérés dans une application.
 
     
