@@ -26,17 +26,17 @@ Answer the following questions:
 
    Scenario où ils produisent le même résultat:
 
-    String comp1 = "Scenario";
-    String comp2 = "Scenario";
-    assertEquals(comp1, comp2);  Vrai
-    assertSame(comp1, comp2);   Vrai
+       String comp1 = "Scenario";
+       String comp2 = "Scenario";
+       assertEquals(comp1, comp2);  Vrai
+       assertSame(comp1, comp2);   Vrai
 
    Scenario où ils produisent le même résultat:
 
-    String comp1 = new String("Scenario");
-    String comp2 = new String("Scenario");
-    assertEquals(comp1, comp2);  Vrai
-    assertSame(comp1, comp2);    Faux
+       String comp1 = new String("Scenario");
+       String comp2 = new String("Scenario");
+       assertEquals(comp1, comp2);  Vrai
+       assertSame(comp1, comp2);    Faux
 
 
 3.  
